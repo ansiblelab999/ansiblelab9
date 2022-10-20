@@ -1,0 +1,10 @@
+---
+- hosts: all
+  gather_facts: no
+  become: false
+
+  tasks:
+  - win_reboot:
+#    when: false
+
+  - wait_for_connection:

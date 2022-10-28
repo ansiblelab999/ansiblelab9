@@ -1,0 +1,7 @@
+---
+- hosts: win
+  tasks:
+   - name: Stop Spooler
+     win_service:
+       name: Spooler
+       state: stopped

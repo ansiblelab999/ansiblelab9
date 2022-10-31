@@ -1,7 +1,7 @@
 --- 
 - 
-  become: false
   hosts: "192.168.138.128"
+  become: false
   name: "Installing 7zip"
   tasks: 
     - 
@@ -12,8 +12,7 @@
     - 
       name: "Install exe"
       win_package: 
-        arguments: 
-          - /norestart
         path: "C:\\ansible_examples\\7z2201-x64.exe"
-        product_id: 7-Zip
+        creates_path: C:\Program Files\7-Zip\7z.exe
+        creates_version: 22.01
         state: present

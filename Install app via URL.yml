@@ -1,18 +1,19 @@
----
-- name: Installing 7zip
-  hosts: 192.168.138.128
+--- 
+- 
   become: false
-
-  tasks:
-    - name: "Download the 7zip installer"
-      win_get_url:
-        url: https://www.7-zip.org/a/7z2201-x64.exe
-        dest: C:\ansible_examples\7z2201-x64.exe
-
-    - name: "Install exe"
-      win_package:
-        path: C:\ansible_examples\7z2201-x64.exe
+  hosts: "192.168.138.128"
+  name: "Installing 7zip"
+  tasks: 
+    - 
+      name: "Download the 7zip installer"
+      win_get_url: 
+        dest: "C:\\ansible_examples\\7z2201-x64.exe"
+        url: "https://www.7-zip.org/a/7z2201-x64.exe"
+    - 
+      name: "Install exe"
+      win_package: 
+        arguments: 
+          - /norestart
+        path: "C:\\ansible_examples\\7z2201-x64.exe"
         product_id: 7-Zip
         state: present
-        arguments:
-          - /norestart

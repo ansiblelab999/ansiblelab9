@@ -1,18 +1,7 @@
---- 
-- 
-  hosts: "192.168.138.128"
-  become: false
-  name: "Installing 7zip"
-  tasks: 
-    - 
-      name: "Download the 7zip installer"
-      win_get_url: 
-        dest: "C:\\ansible_examples\\7z2201-x64.exe"
-        url: "https://www.7-zip.org/a/7z2201-x64.exe"
-    - 
-      name: "Install Exe"
-      win_package: 
-        path: "C:\\ansible_examples\\7z2201-x64.exe"
-        creates_path: C:\Program Files\7-Zip\7z.exe
-        creates_version: 22.01
-        state: present
+---
+- name: Install 7zip and use a file version for the installation check
+  ansible.windows.win_package:
+    path: C:\ansible_examples\7z2201.exe
+    creates_path: C:\Program Files\7-Zip\7z2201.exe
+    creates_version: 22.01
+    state: present

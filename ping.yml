@@ -1,5 +1,5 @@
 ---
-- name: win_ping module demo
+- name: win_ping demo
   hosts: all
   become: false
   gather_facts: false

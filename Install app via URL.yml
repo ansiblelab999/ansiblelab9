@@ -12,7 +12,7 @@
     - name: "Install exe"
       win_package:
         path: C:\ansible_examples\7z2201-x64.exe
-        product_id: 22.01
+        product_id: 7-Zip
         arguments:
           - /install
           - /passive

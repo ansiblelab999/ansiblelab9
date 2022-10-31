@@ -1,9 +1,9 @@
 ---
 
-- hosts: all
+- hosts: 192.168.138.128
 
   tasks:
-   - name: run an executable using win_command
-     win_command: explorer.exe
-   - name: run a cmd command
+   - name: run exe using win_command
+     win_command: whoami.exe
+   - name: run cmd command
      win_command: cmd.exe /c mkdir C:\test

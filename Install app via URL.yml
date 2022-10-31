@@ -12,4 +12,5 @@
         path: C:\ansible_examples\httpd-2.2.25-win32-x86-no_ssl.msi
         arguments:
           - /install
+          - /passive
           - /norestart

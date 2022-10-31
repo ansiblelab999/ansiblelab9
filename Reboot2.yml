@@ -7,5 +7,5 @@
    - name: reboot host(s)
      win_reboot:
        msg: "reboot by Ansible"
-       pre_reboot_delay: 5
+       pre_reboot_delay: 10
        post_reboot_delay: 10

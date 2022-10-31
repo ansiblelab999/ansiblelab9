@@ -1,7 +1,15 @@
 ---
-- name: Install 7zip and use a file version for the installation check
-  win_package:
-    path: C:\ansible_examples\7z2201.exe
-    creates_path: C:\Program Files\7-Zip\7z2201.exe
-    creates_version: 22.01
-    state: present
+- name: Installing Apache MSI
+  hosts: 192.168.138.128
+  tasks:
+    - name: Download the Apache installer
+      win_get_url:
+        url: https://archive.apache.org/dist/httpd/binaries/win32/httpd-2.2.25-win32-x86-no_ssl.msi
+        dest: C:\ansible_examples\httpd-2.2.25-win32-x86-no_ssl.msi
+
+    - name: Install MSI
+      win_package:
+        path: C:\ansible_examples\httpd-2.2.25-win32-x86-no_ssl.msi
+        arguments:
+          - /install
+          - /norestart

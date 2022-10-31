@@ -1,0 +1,8 @@
+---
+- hosts: all
+  become: false
+  tasks:
+   - name: "Start Spooler"
+     win_service:
+       name: Spooler
+       state: started

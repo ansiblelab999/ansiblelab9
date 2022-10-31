@@ -7,5 +7,3 @@
      win_command: whoami.exe
    - name: run cmd command
      win_command: cmd.exe /c mkdir C:\test
-   - name: run cmd command2
-     win_command: cmd.exe /c explorer.exe

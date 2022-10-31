@@ -13,7 +13,6 @@
       win_package:
         path: C:\ansible_examples\7z2201-x64.exe
         product_id: 7-Zip
+        state: present
         arguments:
-          - /install
-          - /passive
           - /norestart

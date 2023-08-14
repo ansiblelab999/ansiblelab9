@@ -6,7 +6,7 @@
   tasks:
    - name: reboot host(s)
      win_reboot:
-       if_pending: true
+       win_pending_reboot: true
        msg: "Reboot by Ansible"
        pre_reboot_delay: 10
        post_reboot_delay: 10

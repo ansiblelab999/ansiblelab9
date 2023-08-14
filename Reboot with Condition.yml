@@ -6,7 +6,7 @@
   tasks:
    - name: reboot host(s)
      win_reboot:
-       when: (ansible_facts['reboot_pending'] == "yes")
+       if_pending: true
        msg: "Reboot by Ansible"
        pre_reboot_delay: 10
        post_reboot_delay: 10

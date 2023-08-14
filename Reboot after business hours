@@ -1,0 +1,12 @@
+---
+- name: win_reboot module
+  hosts: all
+  become: false
+  gather_facts: false
+  tasks:
+    - name: reboot host(s)
+      win_reboot:
+        when: system_time == >19:00pm
+        msg: Reboot by Ansible
+        pre_reboot_delay: 10
+        post_reboot_delay: 10
